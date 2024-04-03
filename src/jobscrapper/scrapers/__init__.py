@@ -1,13 +1,6 @@
 from __future__ import annotations
 
-from ..jobs import (
-    Enum,
-    BaseModel,
-    JobType,
-    JobResponse,
-    Country,
-    DescriptionFormat,
-)
+from ..jobs import BaseModel, Country, DescriptionFormat, Enum, JobResponse, JobType
 
 
 class Site(Enum):

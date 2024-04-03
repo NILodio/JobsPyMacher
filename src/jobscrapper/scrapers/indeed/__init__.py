@@ -8,27 +8,27 @@ This module contains routines to scrape Indeed.
 from __future__ import annotations
 
 import math
-from typing import Tuple
+from concurrent.futures import Future, ThreadPoolExecutor
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor, Future
+from typing import Tuple
 
 import requests
 
+from ...jobs import (
+    Compensation,
+    CompensationInterval,
+    DescriptionFormat,
+    JobPost,
+    JobResponse,
+    JobType,
+    Location,
+)
 from .. import Scraper, ScraperInput, Site
 from ..utils import (
     extract_emails_from_text,
     get_enum_from_job_type,
-    markdown_converter,
     logger,
-)
-from ...jobs import (
-    JobPost,
-    Compensation,
-    CompensationInterval,
-    Location,
-    JobResponse,
-    JobType,
-    DescriptionFormat,
+    markdown_converter,
 )
 
 
@@ -331,7 +331,7 @@ class IndeedScraper(Scraper):
     api_headers = {
         "Host": "apis.indeed.com",
         "content-type": "application/json",
-        "indeed-api-key": "161092c2017b5bbab13edb12461a62d5a833871e7cad6d9d475304573de67ac8", # noqa #TO
+        "indeed-api-key": "161092c2017b5bbab13edb12461a62d5a833871e7cad6d9d475304573de67ac8",  # noqa #TO
         "accept": "application/json",
         "indeed-locale": "en-US",
         "accept-language": "en-US,en;q=0.9",

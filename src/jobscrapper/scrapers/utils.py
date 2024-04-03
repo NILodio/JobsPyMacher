@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-import re
 import logging
+import re
+
+import numpy as np
 import requests
 import tls_client
-import numpy as np
 from markdownify import markdownify as md
 from requests.adapters import HTTPAdapter, Retry
 

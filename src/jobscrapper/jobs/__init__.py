@@ -1,21 +1,18 @@
 from __future__ import annotations
 
-from typing import Optional
 from datetime import date
 from enum import Enum
+from typing import Optional
+
 from pydantic import BaseModel
 
 
 class JobType(Enum):
-    FULL_TIME = (
-        "fulltime",
-    )
-    PART_TIME = ("parttime")
+    FULL_TIME = ("fulltime",)
+    PART_TIME = "parttime"
     CONTRACT = ("contract", "contractor")
     TEMPORARY = ("temporary",)
-    INTERNSHIP = (
-        "internship",
-    )
+    INTERNSHIP = ("internship",)
     NIGHTS = ("nights",)
     OTHER = ("other",)
     SUMMER = ("summer",)
@@ -27,6 +24,7 @@ class Country(Enum):
     Gets the subdomain for Indeed and Glassdoor.
     The second item in the tuple is the subdomain (and API country code if there's a ':' separator) for Indeed
     """
+
     CANADA = ("canada", "ca", "ca")
     CHILE = ("chile", "cl")
     COLOMBIA = ("colombia", "co")

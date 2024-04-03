@@ -1,13 +1,14 @@
 from __future__ import annotations
 
-import pandas as pd
-from typing import Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Tuple
+
+import pandas as pd
 
 from .jobs import JobType, Location
-from .scrapers.utils import logger, set_logger_level
+from .scrapers import Country, JobResponse, ScraperInput, Site
 from .scrapers.indeed import IndeedScraper
-from .scrapers import ScraperInput, Site, JobResponse, Country
+from .scrapers.utils import logger, set_logger_level
 
 
 def scrape_jobs(
