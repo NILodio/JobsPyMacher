@@ -18,6 +18,8 @@ POETRY = poetry
 
 ## Install Python Dependencies
 requirements: test_environment
+	$(POETRY) install
+	pre-commit install
 	$(PYTHON_INTERPRETER) -m poetry build
 
 ## Make Dataset
