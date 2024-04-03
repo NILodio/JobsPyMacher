@@ -37,6 +37,11 @@ lint:
 test_environment:
 	$(PYTHON_INTERPRETER) test_environment.py
 
+format:
+	$(PYTHON_INTERPRETER) -m isort .
+	$(PYTHON_INTERPRETER) -m black .
+	$(PYTHON_INTERPRETER) -m ruff check . --fix
+
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
