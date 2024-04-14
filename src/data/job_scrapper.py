@@ -1,20 +1,21 @@
 import logging
-import sys
 import os
 
 # setting path
-sys.path.insert(0, "..")
 import pandas as pd
 
 # importing
 from jobscrapper import scrape_jobs
 
+
 class JobScrapperAPI(object):
     def __init__(self, output_filepath=None):
         self.jobs_website = os.getenv("JOBS_WEBSITE")
         self.jobs_country = os.getenv("JOBS_COUNTRY")
-        self.search_terms = os.getenv("SEARCH_TERMS").split(',')
-        self.search_terms = [term.strip().lower().replace("-", " ") for term in self.search_terms]
+        self.search_terms = os.getenv("SEARCH_TERMS").split(",")
+        self.search_terms = [
+            term.strip().lower().replace("-", " ") for term in self.search_terms
+        ]
         self.logger = logging.getLogger(__name__)
         self.output_filepath = "data/raw" if not output_filepath else output_filepath
 
@@ -22,7 +23,11 @@ class JobScrapperAPI(object):
         jobs = None
         for i, search_term in enumerate(self.search_terms):
             print(
-                "===== Scrapping Job (" + str(i + 1) + "/" + str(len(self.search_terms)) + "):",
+                "===== Scrapping Job ("
+                + str(i + 1)
+                + "/"
+                + str(len(self.search_terms))
+                + "):",
                 search_term,
                 "=====",
             )
@@ -45,5 +50,7 @@ class JobScrapperAPI(object):
             print(f"Checkpoint saved as CSV file:'jobs_{jobs.shape[0]}.csv'")
 
             if len(jobs) >= num_jobs:
-                print("Max amount of jobs (defined by parameter) scrpped. Ending job scrapping...")
+                print(
+                    "Max amount of jobs (defined by parameter) scrpped. Ending job scrapping..."
+                )
                 break

@@ -7,7 +7,8 @@ readme = "README.md"
 
 
 packages = [
-    { include = "jobscrapper", from = "src" }
+    { include = "jobscrapper", from = "src" },
+    { include = "resumes_kaggle", from = "src" }
 ]
 
 [tool.poetry.dependencies]
@@ -20,6 +21,7 @@ pydantic = "^2.3.0"
 tls-client = "^1.0.1"
 markdownify = "^0.11.6"
 ipykernel = "^6.29.4"
+kaggle = "^1.6.12"
 
 
 [tool.poetry.group.dev.dependencies]
