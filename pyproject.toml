@@ -8,7 +8,8 @@ readme = "README.md"
 
 packages = [
     { include = "jobscrapper", from = "src" },
-    { include = "resumes_kaggle", from = "src" }
+    { include = "resumes_kaggle", from = "src" },
+    { include = "jobsparser", from = "src"}
 ]
 
 [tool.poetry.dependencies]
@@ -22,6 +23,11 @@ tls-client = "^1.0.1"
 markdownify = "^0.11.6"
 ipykernel = "^6.29.4"
 kaggle = "^1.6.12"
+spacy = "^3.7.4"
+textdistance = "^4.6.1"
+scikit-learn = "1.2.2"
+textacy = "^0.13.0"
+pypdf = "^4.2.0"
 
 
 [tool.poetry.group.dev.dependencies]
