@@ -5,6 +5,8 @@ import os
 import pandas as pd
 
 # importing
+import sys
+sys.path.insert(0, "..")
 from jobscrapper import scrape_jobs
 
 
@@ -38,6 +40,7 @@ class JobScrapperAPI(object):
                 hyperlinks=False,
                 results_wanted=num_batch,
             )
+            jobs_term['search_term'] = search_term
             if jobs is not None:
                 jobs = pd.concat([jobs, jobs_term], ignore_index=True)
             else:
