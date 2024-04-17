@@ -32,6 +32,8 @@ en-core-web-sm = {url = "https://github.com/explosion/spacy-models/releases/down
 streamlit = "^1.33.0"
 st-annotated-text = "^4.0.1"
 streamlit-extras = "^0.4.2"
+nltk = "^3.8.1"
+plotly = "^5.21.0"
 
 
 [tool.poetry.group.dev.dependencies]
