@@ -23,11 +23,15 @@ tls-client = "^1.0.1"
 markdownify = "^0.11.6"
 ipykernel = "^6.29.4"
 kaggle = "^1.6.12"
-spacy = "^3.7.4"
 textdistance = "^4.6.1"
 scikit-learn = "1.2.2"
 textacy = "^0.13.0"
 pypdf = "^4.2.0"
+en-core-web-md = {url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.6.0/en_core_web_md-3.6.0-py3-none-any.whl#sha256=1618fc62e7aedc2b778caa3ea6e9c8280beac3b83fe7b93316cbb9e8f3abe7c5"}
+en-core-web-sm = {url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0-py3-none-any.whl#sha256=83276fc78a70045627144786b52e1f2728ad5e29e5e43916ec37ea9c26a11212"}
+streamlit = "^1.33.0"
+st-annotated-text = "^4.0.1"
+streamlit-extras = "^0.4.2"
 
 
 [tool.poetry.group.dev.dependencies]

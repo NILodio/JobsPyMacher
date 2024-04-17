@@ -1,6 +1,6 @@
+from jobsparser.parsers.utils import CountFrequency, TextCleaner, TextUtils
 from jobsparser.text.extractor import DataExtractor
 from jobsparser.text.key_terms import KeytermExtractor
-from jobsparser.utils import CountFrequency, TextCleaner, generate_unique_id
 
 
 class ParseResume:
@@ -24,7 +24,7 @@ class ParseResume:
         Returns a dictionary of resume data.
         """
         resume_dictionary = {
-            "unique_id": generate_unique_id(),
+            "unique_id": TextUtils.generate_unique_id(),
             "resume_data": self.resume_data,
             "clean_data": self.clean_data,
             "entities": self.entities,

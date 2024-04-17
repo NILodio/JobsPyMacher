@@ -3,7 +3,7 @@ import urllib.request
 
 import spacy
 
-from jobsparser.utils import TextCleaner
+from jobsparser.parsers.utils import TextCleaner
 
 # Load the English model
 nlp = spacy.load("en_core_web_sm")

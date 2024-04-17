@@ -44,6 +44,9 @@ format:
 	$(PYTHON_INTERPRETER) -m black .
 	$(PYTHON_INTERPRETER) -m ruff check . --fix
 
+develop:
+	streamlit run app/1_🤓_Homepage.py
+
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################

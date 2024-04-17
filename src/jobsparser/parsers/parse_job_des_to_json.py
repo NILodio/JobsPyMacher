@@ -1,6 +1,6 @@
+from jobsparser.parsers.utils import CountFrequency, TextCleaner, TextUtils
 from jobsparser.text.extractor import DataExtractor
 from jobsparser.text.key_terms import KeytermExtractor
-from jobsparser.utils import CountFrequency, TextCleaner, generate_unique_id
 
 
 class ParseJobDesc:
@@ -19,7 +19,7 @@ class ParseJobDesc:
         Returns a dictionary of job description data.
         """
         job_desc_dictionary = {
-            "unique_id": generate_unique_id(),
+            "unique_id": TextUtils.generate_unique_id(),
             "job_desc_data": self.job_desc_data,
             "clean_data": self.clean_data,
             "entities": self.entities,

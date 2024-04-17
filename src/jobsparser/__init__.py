@@ -1,8 +1,8 @@
 from .parsers.parse_job_des_to_json import ParseJobDesc
 from .parsers.parse_resume_to_json import ParseResume
+from .parsers.utils import CountFrequency, TextCleaner, TextUtils
 from .text.extractor import DataExtractor
 from .text.key_terms import KeytermExtractor
-from .utils import CountFrequency, TextCleaner, generate_unique_id
 
 __all__ = [
     "ParseJobDesc",
@@ -11,5 +11,5 @@ __all__ = [
     "KeytermExtractor",
     "CountFrequency",
     "TextCleaner",
-    "generate_unique_id",
+    "TextUtils",
 ]
